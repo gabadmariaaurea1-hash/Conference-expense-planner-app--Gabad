@@ -1,0 +1,786 @@
+/* ==========================================
+   GLOBAL & RESET STYLES
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333333;
+}
+
+.app-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================
+   NAVBAR & HEADER
+   ========================================== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo-section {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.burger-icon-logo {
+  font-size: 2rem;
+}
+
+.logo-text h2 {
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  color: #ffb703;
+  margin: 0;
+}
+
+.logo-text span {
+  font-size: 0.7rem;
+  color: #bbb;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #ffb703;
+}
+
+.cart-icon-container {
+  position: relative;
+  cursor: pointer;
+  background-color: #333333;
+  padding: 8px 12px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.2s;
+}
+
+.cart-icon-container:hover {
+  background-color: #e63946;
+}
+
+.cart-icon {
+  font-size: 1.2rem;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #e63946;
+  color: #ffffff;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ==========================================
+   HERO SECTION
+   ========================================== */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1550547660-d9450f859349?w=1200') center/cover no-repeat;
+  color: #ffffff;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.hero-title {
+  font-size: 2.8rem;
+  color: #ffb703;
+  margin-bottom: 15px;
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ==========================================
+   ABOUT SECTION
+   ========================================== */
+.about-section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.about-header h2 {
+  font-size: 2.2rem;
+  color: #1a1a1a;
+}
+
+.about-subtitle {
+  color: #666;
+}
+
+.about-main-content {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.about-image-wrapper img {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-text-info {
+  flex: 1;
+  min-width: 300px;
+}
+
+.about-text-info h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  color: #e63946;
+}
+
+/* ==========================================
+   OUR MENU / SHOP SECTION
+   ========================================== */
+.menu-shop-section {
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-title h2 {
+  font-size: 2.2rem;
+  color: #1a1a1a;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 10px 22px;
+  border: 1px solid #ddd;
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: #e63946;
+  color: #ffffff;
+  border-color: #e63946;
+}
+
+/* ==========================================
+   MENU GRID & CARDS
+   ========================================== */
+.burger-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.burger-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+
+.burger-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.burger-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.image-container:hover .overlay-text {
+  opacity: 1;
+}
+
+.card-body {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.stars {
+  color: #ffb703;
+  font-size: 0.9rem;
+}
+
+.empty-stars {
+  color: #ccc;
+}
+
+.heart-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: #888;
+  cursor: pointer;
+}
+
+.burger-name {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+}
+
+.burger-description {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 15px;
+  flex: 1;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}
+
+.price-tag {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e63946;
+}
+
+.add-cart-btn {
+  padding: 8px 16px;
+  background-color: #e63946;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.add-cart-btn:hover {
+  background-color: #c92a37;
+}
+
+/* ==========================================
+   QUANTITY CONTROLS (PLUS / MINUS BUTTONS)
+   ========================================== */
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.qty-controls button {
+  background-color: #e63946 !important;
+  color: #ffffff !important;
+  border: none !important;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease;
+}
+
+.qty-controls button:hover {
+  background-color: #c92a37 !important;
+}
+
+.qty-controls span {
+  color: #333333 !important;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.qty-controls.small button {
+  width: 26px;
+  height: 26px;
+  font-size: 1rem;
+}
+
+/* ==========================================
+   MODAL / POP-UP DIALOG (CUSTOMIZATION & CHECKOUT)
+   ========================================== */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: #ffffff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 480px;
+  padding: 25px;
+  position: relative;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  color: #333333;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.modal-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.modal-desc {
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.option-group {
+  margin-bottom: 15px;
+}
+
+.option-group h4 {
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+
+.radio-options, .checkbox-options {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+}
+
+.quantity-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.confirm-order-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #e63946;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ==========================================
+   CART SIDEBAR DRAWER (FIXED POSITION RIGHT)
+   ========================================== */
+.cart-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background-color: #ffffff;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  z-index: 10000;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto;
+  color: #333333;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 12px;
+}
+
+.cart-header h2 {
+  color: #1a1a1a !important;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.empty-cart {
+  padding: 40px 0;
+  text-align: center;
+  color: #777;
+}
+
+.cart-items-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-top: 15px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.cart-item-img {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.cart-item-details {
+  flex: 1;
+}
+
+.cart-item-details h4 {
+  margin: 0 0 4px 0;
+  color: #1a1a1a !important;
+  font-size: 0.95rem;
+}
+
+.cart-meta {
+  font-size: 0.8rem;
+  color: #666666;
+  margin: 2px 0;
+}
+
+.cart-item-price {
+  font-weight: bold;
+  color: #e63946;
+  margin-top: 4px;
+  font-size: 0.95rem;
+}
+
+.cart-item-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.cart-footer {
+  border-top: 2px solid #eee;
+  padding-top: 15px;
+  margin-top: auto;
+}
+
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.15rem;
+  margin-bottom: 15px;
+  color: #111111;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 14px;
+  background-color: #27ae60;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* ==========================================
+   CHECKOUT DIALOG & FORM STYLES (FIXED COLORS)
+   ========================================== */
+.checkout-modal {
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+}
+
+/* Fix para sa Modal Title "Checkout & Payment 💳" */
+.checkout-modal h2 {
+  color: #1a1a1a !important;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.checkout-summary {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid #e9ecef;
+}
+
+.checkout-summary h4 {
+  margin-bottom: 10px;
+  color: #1a1a1a !important;
+}
+
+.checkout-items-list {
+  max-height: 120px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.checkout-item-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: #333333 !important;
+}
+
+.checkout-total-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  margin-top: 10px;
+  color: #1a1a1a !important;
+}
+
+.total-price {
+  color: #e63946 !important;
+  font-weight: bold;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Fix para sa "Delivery Information" at "Payment Method" Titles */
+.checkout-form h4 {
+  margin-top: 10px;
+  color: #1a1a1a !important;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Fix para sa Input Fields (Name, Phone, Address) */
+.checkout-form input[type="text"],
+.checkout-form input[type="tel"],
+.checkout-form textarea {
+  width: 100%;
+  padding: 12px;
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 1.5px solid #ccc !important;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+}
+
+.checkout-form input::placeholder,
+.checkout-form textarea::placeholder {
+  color: #777777 !important;
+}
+
+.checkout-form input:focus,
+.checkout-form textarea:focus {
+  outline: none;
+  border-color: #e63946 !important;
+}
+
+/* Fix para sa Payment Cards (COD & GCash) */
+.payment-options {
+  display: flex;
+  gap: 12px;
+  margin-top: 5px;
+}
+
+.payment-card {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: bold;
+  font-size: 0.85rem;
+  color: #1a1a1a !important;
+  background-color: #ffffff !important;
+  transition: all 0.2s ease;
+}
+
+.payment-card.selected {
+  border-color: #e63946 !important;
+  background-color: #fff5f5 !important;
+}
+
+.gcash-info {
+  background-color: #e8f4fd !important;
+  border-left: 4px solid #007bc1 !important;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #004085 !important;
+}
+
+.final-btn {
+  margin-top: 15px;
+  background-color: #27ae60 !important;
+  color: #ffffff !important;
+}
+
+.final-btn:hover {
+  background-color: #219150 !important;
+}
+
+/* ==========================================
+   FOOTER / CONTACT
+   ========================================== */
+.contact-section {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: auto;
+}
+
+.contact-section h3 {
+  color: #ffb703;
+  margin-bottom: 8px;
+}
